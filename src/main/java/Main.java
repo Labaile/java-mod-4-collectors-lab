@@ -6,11 +6,15 @@ import java.util.stream.Collectors;
 class Main {
 
     // modify this method
+    //https://docs.oracle.com/javase/tutorial/collections/streams/reduction.html
     public static long multiplySquaresOfNumbers(List<Integer> numbers) {
-        // your code here
-        return 0;
+        return numbers
+                .stream()
+                .map(x -> x*x)
+                .reduce(
+                        1,
+                        (a, b) -> a * b);
     }
-
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
